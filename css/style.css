@@ -1,0 +1,176 @@
+:root{
+    --white: #ffffff;
+    --dark: #2d2d30;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    scroll-behavior: smooth;
+    background: var(--bg);
+    color: var(--fontColor);
+    
+}
+
+.light-theme{
+    --bg: var(--white);
+    --fontColor: var(--dark); 
+}
+
+.dark-theme{
+    --bg: var(--dark);
+    --fontColor: var(--white); 
+}
+
+
+.center{
+    width: 500px;
+    height: 500px;
+    /* background: var(--white); */
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.pin{
+    width: 250px;
+    height: 5px;
+    border-radius: 25px;
+    border: 5px solid var(--fontColor);
+
+}
+.wires{
+    display: flex;
+    gap: 10px;
+    justify-content: start;
+}
+
+.wire{
+    width: 2px;
+    height: 100px;
+    background: var(--fontColor);
+}
+
+.wire-right{
+    transform: rotate(350deg);
+    position: relative;
+    top: -7px;
+    left: 2px;
+    animation: animation1 linear .2s infinite;
+
+}
+
+.wire-left{
+    transform: rotate(17deg);
+    position: relative;
+    top: -2px;
+    right: 10px;
+    animation: animation linear .2s infinite;
+
+}
+
+.balls{
+    display: flex;
+    position: relative;
+    right: 50px;
+    top: -10px;
+    
+}
+
+.ball-left{
+    width: 50px;
+    height: 50px;
+    background: var(--fontColor);
+    border-radius: 50px;
+
+    animation: animation-ball1 linear .2s infinite;
+ 
+}
+
+.ball-right{
+    width: 50px;
+    height: 50px;
+    background: var(--fontColor);
+    
+    border-radius: 50px;
+    animation: animation-ball2 linear .2s infinite;
+
+}
+
+.btn{
+    width: 250px;
+    height: 50px;
+    border: 2px solid var(--fontColor);
+    background: transparent;
+    color: var(--fontColor);
+    border-radius: 50px;
+    transition: 0.1s ease-in;
+}
+
+
+@keyframes animation {
+    0%, 100%{
+        transform: rotate(17deg);
+    }
+
+    50%{
+        transform: rotate(30deg);
+        top: -8px;
+        right: 19px;
+    }
+}
+
+@keyframes animation1 {
+    0%, 100%{
+        transform: rotate(350deg);  
+    }
+
+    50%{
+        
+        transform: rotate(330deg);
+        top: -15px;
+        left: 20px;
+    }
+}
+
+@keyframes animation-ball1 {
+    0%, 100%{
+        position: relative;
+    }
+
+    50%{
+        position: relative;
+        right: 25px;
+        top: -6px;
+    }
+
+}
+
+@keyframes animation-ball2 {
+    0%, 100%{
+        position: relative;
+    }
+
+    50%{
+        position: relative;
+        left: 35px;
+        top: -15px;
+    }
+}
+/* .wire-left{
+    width: 2px;
+    height: 100px;
+    background: var(--white);
+
+} */
+
